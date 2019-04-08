@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "P2P-chat", "P2P-chat\P2P-chat.vcxproj", "{BCED14CC-8CB8-40F9-9203-3FA69E8A7F41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCED14CC-8CB8-40F9-9203-3FA69E8A7F41}.Debug|x64.ActiveCfg = Debug|x64
+		{BCED14CC-8CB8-40F9-9203-3FA69E8A7F41}.Debug|x64.Build.0 = Debug|x64
+		{BCED14CC-8CB8-40F9-9203-3FA69E8A7F41}.Debug|x86.ActiveCfg = Debug|Win32
+		{BCED14CC-8CB8-40F9-9203-3FA69E8A7F41}.Debug|x86.Build.0 = Debug|Win32
+		{BCED14CC-8CB8-40F9-9203-3FA69E8A7F41}.Release|x64.ActiveCfg = Release|x64
+		{BCED14CC-8CB8-40F9-9203-3FA69E8A7F41}.Release|x64.Build.0 = Release|x64
+		{BCED14CC-8CB8-40F9-9203-3FA69E8A7F41}.Release|x86.ActiveCfg = Release|Win32
+		{BCED14CC-8CB8-40F9-9203-3FA69E8A7F41}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3AC8694A-C210-48F8-B79E-E1B58F47A83E}
+	EndGlobalSection
+EndGlobal

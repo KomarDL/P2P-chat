@@ -1,0 +1,5 @@
+#pragma once
+
+#define DEFAULT_PORT 55555
+#define WORKING_BUFFER_SIZE 15000
+#define RECIVE_BUFFER_SIZE 1024
