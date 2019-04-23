@@ -40,18 +40,18 @@ ULONG GetBroadcastAddress(PULONG LocalMachineIP)
 			{
 				ULONG SubnetMask = 0;
 				ConvertLengthToIpv4Mask(CurrAdr->FirstUnicastAddress->OnLinkPrefixLength, &SubnetMask);
-				char str[16];
+				/*char str[16];
 				inet_ntop(AF_INET, &SubnetMask, str, 16);
-				printf_s("Subnet mask: %s\n", str);
+				printf_s("Subnet mask: %s\n", str);*/
 
 				sockaddr_in *IPInAddr = (sockaddr_in*)CurrAdr->FirstUnicastAddress->Address.lpSockaddr;
 				(*LocalMachineIP) = IPInAddr->sin_addr.s_addr;
-				inet_ntop(AF_INET, LocalMachineIP, str, 16);
-				printf_s("My IP address: %s\n", str);
+				/*inet_ntop(AF_INET, LocalMachineIP, str, 16);
+				printf_s("My IP address: %s\n", str);*/
 
 				BroadcastAddr = (*LocalMachineIP) | (~SubnetMask);
-				inet_ntop(AF_INET, &BroadcastAddr, str, 16);
-				printf_s("Broadcast address: %s\n\n\n", str);
+				/*inet_ntop(AF_INET, &BroadcastAddr, str, 16);
+				printf_s("Broadcast address: %s\n\n\n", str);*/
 			}
 			CurrAdr = CurrAdr->Next;
 		}
@@ -171,12 +171,11 @@ int main()
 
 	char *Nickname = (char*)calloc(MAXBYTE, sizeof(char));
 
-	std::thread ListenBroadcast(ListenBroadcastUDPThread, MyIP, std::ref(Work), std::ref(ClientList), std::ref(mtx), std::ref(Nickname));
+	std::thread ListenBroadcast = std::thread(ListenBroadcastUDPThread, MyIP, std::ref(Work), std::ref(ClientList), std::ref(mtx), std::ref(Nickname));
 	std::thread AcceptConnections(AcceptConnectionsThread, MyIP, std::ref(Work), std::ref(ClientList), std::ref(mtx), std::ref(Nickname));
 
 	mtx.lock();
-	const char ExitMsg[] = "*LEAVE*";
-	printf_s("Print %s to leave chat", ExitMsg);
+
 	do
 	{
 		printf_s("Your nickname: ");
@@ -224,7 +223,7 @@ int main()
 		mtx.unlock();
 
 		Mailing(msg, ClientList, mtx);
-	} while (strcmp(msg, ExitMsg) != 0);
+	} while (TRUE);
 	Work = FALSE;
 
 	//waiting for other threads

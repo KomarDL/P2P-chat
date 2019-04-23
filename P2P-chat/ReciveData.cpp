@@ -41,6 +41,7 @@ void ReciveData(BOOL &Work, PList &Client, PList &ClientList, std::mutex &mtx, c
 		{
 			mtx.lock();
 
+			
 			printf_s("User \"%s\" left chat\n", Client->Nickname);
 			shutdown(Client->Socket, SD_BOTH);
 			closesocket(Client->Socket);

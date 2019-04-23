@@ -1,7 +1,2 @@
-﻿  AcceptConnections.cpp
-  Chat.cpp
-  List.cpp
-  ReciveBroadcastUDP.cpp
-  ReciveData.cpp
-  Создание кода...
+﻿  Chat.cpp
   P2P-chat.vcxproj -> H:\Проекты\Семестр 4\КСиС\P2P-chat\Debug\P2P-chat.exe
